@@ -26,8 +26,7 @@ public class FlightsDetailsPage extends PageObject {
             flightPrice.add(find(By.xpath("/html/body/div[2]/table/tbody/tr["+i+"]/td[6]")).getText()
                     .replaceAll("[$,]", ""));
         }
-
-        System.out.println("Check Price" + flightPrice);
+        //sort to get cheap price
         Collections.sort(flightPrice);
 
         //click

@@ -49,14 +49,12 @@ public class WhenBookFlightsInBlazeDemo {
 
     @Test
     public void searchFlights(){
-        driver.manage().window().maximize();
         john.is_on_WelcomePage();
         john.selectCities("Boston", "Rome");
     }
 
     @Test
     public void selectFlights(){
-        driver.manage().window().maximize();
         john.is_on_WelcomePage();
         john.selectCities("Boston", "Rome");
         james.select_FlightFromOptions();
@@ -64,7 +62,6 @@ public class WhenBookFlightsInBlazeDemo {
 
     @Test
     public void purchaseTicket(){
-        driver.manage().window().maximize();
         john.is_on_WelcomePage();
         john.selectCities("Boston", "Rome");
         james.select_FlightFromOptions();

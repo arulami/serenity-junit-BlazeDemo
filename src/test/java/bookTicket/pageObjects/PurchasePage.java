@@ -4,6 +4,8 @@ import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
 
+import java.time.Duration;
+
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
@@ -47,6 +49,7 @@ public class PurchasePage extends PageObject {
     }
 
     public void purchaseTicket(){
+        find(PURCHASE).withTimeoutOf(Duration.ofSeconds(10));
         find(PURCHASE).click();
     }
 
