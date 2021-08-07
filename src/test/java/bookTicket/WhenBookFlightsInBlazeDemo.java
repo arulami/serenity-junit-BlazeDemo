@@ -35,10 +35,10 @@ public class WhenBookFlightsInBlazeDemo {
     EnvironmentVariables variables = SystemEnvironmentVariables.createEnvironmentVariables();
     //passenger Details
     String name = EnvironmentSpecificConfiguration.from(variables).getProperty("passenger.manager.name");
-    String address  = EnvironmentSpecificConfiguration.from(variables).getProperty("passenger.manager.name");
-    String city = EnvironmentSpecificConfiguration.from(variables).getProperty("passenger.manager.name");
-    String state = EnvironmentSpecificConfiguration.from(variables).getProperty("passenger.manager.name");
-    String zipcode = EnvironmentSpecificConfiguration.from(variables).getProperty("passenger.manager.name");
+    String address  = EnvironmentSpecificConfiguration.from(variables).getProperty("passenger.manager.address");
+    String city = EnvironmentSpecificConfiguration.from(variables).getProperty("passenger.manager.city");
+    String state = EnvironmentSpecificConfiguration.from(variables).getProperty("passenger.manager.state");
+    String zipcode = EnvironmentSpecificConfiguration.from(variables).getProperty("passenger.manager.zipcode");
 
     //card Details
     String cardType = EnvironmentSpecificConfiguration.from(variables).getProperty("passenger.manager.cardType");

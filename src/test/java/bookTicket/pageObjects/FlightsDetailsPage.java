@@ -16,8 +16,6 @@ import static org.hamcrest.Matchers.is;
 public class FlightsDetailsPage extends PageObject {
 
     public static final By FLIGHT_OPTIONS = By.tagName("tr");
-    public static final By FLIGHT_TABLE = By.xpath("/html/body/div[2]/table/tbody");
-     //tr[1]/td[6]
 
     public void selectFlightFromOptions(){
         assertThat(findAll(FLIGHT_OPTIONS).size(), is(greaterThan(0)));
