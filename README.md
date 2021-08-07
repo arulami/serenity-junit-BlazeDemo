@@ -10,8 +10,8 @@ This is a very minimal sample project using JUnit and Serenity BDD in Java.
 
 Git:
 
-    git clone https://github.com/serenity-bdd/serenity-junit-starter.git
-    cd serenity-junit-starter
+    git clone https://github.com/arulami/serenity-junit-BlazeDemo.git
+    cd serenity-junit-BlazeDemo
 
 ## Use Maven
 
