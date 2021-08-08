@@ -1,5 +1,6 @@
 package bookTicket.pageObjects;
 
+import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
@@ -9,6 +10,7 @@ import java.time.Duration;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.is;
 
+@DefaultUrl("https://blazedemo.com/purchase.php")
 public class PurchasePage extends PageObject {
 
     public static final By NAME = By.id("inputName");
@@ -21,8 +23,14 @@ public class PurchasePage extends PageObject {
     public static final By MONTH = By.id("creditCardMonth");
     public static final By YEAR = By.id("creditCardYear");
     public static final By NAMEONCARD = By.id("nameOnCard");
+    public static final By FLIGHT_NUMBER = By.xpath("/html/body/div[2]/p[2]");
 
     public static final By PURCHASE = By.cssSelector("input.btn.btn-primary");
+
+
+    public String getFlightNumber(){
+        return find(FLIGHT_NUMBER).getText();
+    }
 
 
     public void personDetails(String name, String address, String city,

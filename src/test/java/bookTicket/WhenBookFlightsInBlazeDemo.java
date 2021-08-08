@@ -7,6 +7,7 @@ import bookTicket.steps.WelcomeSteps;
 import net.serenitybdd.core.environment.EnvironmentSpecificConfiguration;
 import net.serenitybdd.junit.runners.SerenityRunner;
 import net.thucydides.core.annotations.Managed;
+import net.thucydides.core.annotations.Manual;
 import net.thucydides.core.annotations.Steps;
 import net.thucydides.core.util.EnvironmentVariables;
 import net.thucydides.core.util.SystemEnvironmentVariables;
@@ -48,27 +49,32 @@ public class WhenBookFlightsInBlazeDemo {
 
 
     @Test
-    public void searchFlights(){
-        john.is_on_WelcomePage();
-        john.selectCities("Boston", "Rome");
-    }
-
-    @Test
     public void selectFlights(){
         john.is_on_WelcomePage();
         john.selectCities("Boston", "Rome");
-        james.select_FlightFromOptions();
+        james.view_FlightFromOptions("Boston", "Rome");
     }
 
     @Test
     public void purchaseTicket(){
         john.is_on_WelcomePage();
         john.selectCities("Boston", "Rome");
-        james.select_FlightFromOptions();
+        james.view_FlightFromOptions("Boston", "Rome");
+        joe.select_and_verify_flight();
         joe.enter_PassengerDetails(name, address, city, state, zipcode);
         joe.enter_CardDetails(cardType, cardNumber, month, year, name);
         joe.purchaseFlightTicket();
         jack.confirm_ID();
     }
+
+    @Test
+    public void purchaseTicketOnly(){
+        joe.is_on_PurchasePage();
+        joe.enter_PassengerDetails(name, address, city, state, zipcode);
+        joe.enter_CardDetails(cardType, cardNumber, month, year, name);
+        joe.purchaseFlightTicket();
+        jack.confirm_ID();
+    }
+
 
 }

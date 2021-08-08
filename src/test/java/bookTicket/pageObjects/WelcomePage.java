@@ -1,6 +1,5 @@
 package bookTicket.pageObjects;
 
-import net.serenitybdd.core.Serenity;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.thucydides.core.pages.PageObject;
 import org.openqa.selenium.By;
@@ -27,4 +26,23 @@ public class WelcomePage extends PageObject {
 
         find(FIND_FLIGHTS).click();
     }
+
+    public String selectDeparture(String from){
+        Select departure_cityList = new Select(find(DEPARTURE_CITY_COMBO));
+        departure_cityList.selectByVisibleText(from);
+        return departure_cityList.getFirstSelectedOption().getText();
+    }
+
+    public String selectDestination(String to){
+        Select destination_cityList = new Select(find(DESTINATION_CITY_COMBO));
+        destination_cityList.selectByVisibleText(to);
+        return destination_cityList.getFirstSelectedOption().getText();
+    }
+
+    public void findFlight(){
+        find(FIND_FLIGHTS).click();
+    }
+
+
+
 }

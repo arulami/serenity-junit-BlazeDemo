@@ -12,6 +12,7 @@ public class ConfirmationSteps {
 
     @Step("#actor confirms Booking ID")
     public void confirm_ID(){
+
         confirmationPage.confirmTicketID();
     }
 
