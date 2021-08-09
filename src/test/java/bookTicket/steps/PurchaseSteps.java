@@ -6,6 +6,7 @@ import net.thucydides.core.annotations.Step;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.containsString;
+import static org.hamcrest.Matchers.is;
 
 public class PurchaseSteps {
 
@@ -32,10 +33,16 @@ public class PurchaseSteps {
         purchasePage.personDetails(name, address, city, state,zipcode);
     }
 
+
+    @Step("#actor selects card type")
+    public void select_card_type(String cardType){
+        assertThat(purchasePage.selectCardType(cardType), is(cardType));
+    }
+
     @Step("#actor enters credit card details")
-    public void enter_CardDetails(String cardType, String cardNumber, String month,
+    public void enter_CardDetails(String cardNumber, String month,
                                   String year, String nameOnCard){
-        purchasePage.cardDetails(cardType, cardNumber, month, year,nameOnCard);
+        purchasePage.cardDetails(cardNumber, month, year,nameOnCard);
     }
 
     @Step("#actor purchase ticket")

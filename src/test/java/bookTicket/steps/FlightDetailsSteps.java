@@ -15,8 +15,6 @@ public class FlightDetailsSteps {
     public void view_FlightFromOptions(String from, String to){
         assertThat(flightsDetailsPage.reserveHeader(), containsString(from));
         assertThat(flightsDetailsPage.reserveHeader(), containsString(to));
-       // assertThat(flightsDetailsPage.departsAndArrives(), containsInAnyOrder("Departs: "+ from, "Arrives " + to));
-
     }
 
     @Step("#actor select cheap flight")

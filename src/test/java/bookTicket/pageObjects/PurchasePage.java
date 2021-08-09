@@ -43,13 +43,15 @@ public class PurchasePage extends PageObject {
         find(ZIPCODE).sendKeys(zipcode);
     }
 
-
-    public void cardDetails(String cardType, String cardNumber, String month,
-                               String year, String nameOnCard){
-
+    public String selectCardType(String cardType){
         Select card_type = new Select(find(CARD_TYPE));
         card_type.selectByVisibleText(cardType);
-        assertThat(card_type.getFirstSelectedOption().getText(), is(cardType));
+        return card_type.getFirstSelectedOption().getText();
+    }
+
+    public void cardDetails(String cardNumber, String month,
+                               String year, String nameOnCard){
+
         find(CREDIT_CARD_NUMBER).sendKeys(cardNumber);
         find(MONTH).sendKeys(month);
         find(YEAR).sendKeys(year);

@@ -62,7 +62,8 @@ public class WhenBookFlightsInBlazeDemo {
         james.view_FlightFromOptions("Boston", "Rome");
         joe.select_and_verify_flight();
         joe.enter_PassengerDetails(name, address, city, state, zipcode);
-        joe.enter_CardDetails(cardType, cardNumber, month, year, name);
+        joe.select_card_type(cardType);
+        joe.enter_CardDetails(cardNumber, month, year, name);
         joe.purchaseFlightTicket();
         jack.confirm_ID();
     }
@@ -71,7 +72,8 @@ public class WhenBookFlightsInBlazeDemo {
     public void purchaseTicketOnly(){
         joe.is_on_PurchasePage();
         joe.enter_PassengerDetails(name, address, city, state, zipcode);
-        joe.enter_CardDetails(cardType, cardNumber, month, year, name);
+        joe.select_card_type(cardType);
+        joe.enter_CardDetails(cardNumber, month, year, name);
         joe.purchaseFlightTicket();
         jack.see_ThankYou();
         jack.confirm_ID();
