@@ -4,6 +4,9 @@ import bookTicket.pageObjects.ConfirmationPage;
 import bookTicket.pageObjects.FlightsDetailsPage;
 import net.thucydides.core.annotations.Step;
 
+import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
+
 public class ConfirmationSteps {
 
     private String actor;
@@ -12,8 +15,14 @@ public class ConfirmationSteps {
 
     @Step("#actor confirms Booking ID")
     public void confirm_ID(){
-
-        confirmationPage.confirmTicketID();
+        assertThat(confirmationPage.confirmTicketID(), not(emptyString()));
     }
+
+
+    @Step("#actor verify Thank you message")
+    public void see_ThankYou(){
+        assertThat(confirmationPage.verify_ThankYou(), containsString("Thank you"));
+    }
+
 
 }

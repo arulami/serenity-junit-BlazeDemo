@@ -73,6 +73,7 @@ public class WhenBookFlightsInBlazeDemo {
         joe.enter_PassengerDetails(name, address, city, state, zipcode);
         joe.enter_CardDetails(cardType, cardNumber, month, year, name);
         joe.purchaseFlightTicket();
+        jack.see_ThankYou();
         jack.confirm_ID();
     }
 
