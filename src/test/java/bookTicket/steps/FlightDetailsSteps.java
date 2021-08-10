@@ -8,6 +8,7 @@ import static org.hamcrest.Matchers.*;
 
 public class FlightDetailsSteps {
 
+    private String actor;
 
     FlightsDetailsPage flightsDetailsPage;
 
